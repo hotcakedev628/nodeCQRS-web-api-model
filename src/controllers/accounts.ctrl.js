@@ -1,4 +1,4 @@
-const bus = require('../aws/bus')
+const bus = require('../aws/sendMessage')
 const commands = require('../config/commands.constants')
 module.exports = {
     createAccount(req, res, next) {

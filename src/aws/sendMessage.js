@@ -9,8 +9,6 @@ var params = {
 };
 
 
-
-
 function send(commandName, payload) {
     return new Promise((resolve, reject) => {
         sqs.sendMessage(params, function (err, data) {
