@@ -5,16 +5,16 @@ const accountIdSchema = Joi.string().min(10).max(70).required()
 const addressLineSchema = Joi.string().min(5).max(70).required()
 const placeShema = Joi.string().min(3).max(35).required()
 
-class InputValidator {
-    static approveAccountSchema(req, res, next) {
+module.exports = {
+     approveAccountSchema(req, res, next) {
         req.schema = Joi.object().keys({
             accountId: accountIdSchema,
             approveBy: requiredNameSchema,
         })
         validateSchema(req, res, next)
-    }
+    },
 
-    static createAccountSchema(req, res, next) {
+     createAccountSchema(req, res, next) {
         req.schema = Joi.object().keys({
             newAccountId: accountIdSchema,
             firstName: requiredNameSchema,
@@ -23,27 +23,27 @@ class InputValidator {
             userEmail: Joi.string().email().required()
         })
         validateSchema(req, res, next)
-    }
+    },
 
 
-    static deleteAccountSchema(req, res, next) {
+     deleteAccountSchema(req, res, next) {
         req.schema = Joi.object().keys({
             accountId: accountIdSchema,
             reason: Joi.string().min(20).max(7000).required(),
         })
         validateSchema(req, res, next)
-    }
+    },
 
 
-    static reinstateAccountSchema(req, res, next) {
+     reinstateAccountSchema(req, res, next) {
         req.schema = Joi.object().keys({
             accountId: accountIdSchema,
         })
         validateSchema(req, res, next)
-    }
+    },
 
 
-    static updateAccountAdderssSchema(req, res, next) {
+     updateAccountAddressSchema(req, res, next) {
         req.schema = Joi.object().keys({
             accountId: accountIdSchema,
             addressLine1: addressLineSchema,
@@ -54,7 +54,7 @@ class InputValidator {
             countryName: placeShema
         })
         validateSchema(req, res, next)
-    }
+    },
 }
 
 
@@ -66,4 +66,3 @@ function validateSchema(req, res, next) {
 }
 
 
-module.exports = InputValidator

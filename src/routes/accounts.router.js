@@ -1,14 +1,14 @@
 const router = require('express').Router()
-const { createAccount, deleteAccount, reinstateAccount, updateAccountAddress, approveAccount } = require('../controllers/users.ctrl')
+const { approveAccount, createAccount, deleteAccount, reinstateAccount, updateAccountAddress } = require('../controllers/accounts.ctrl')
 const Validate = require('../core/input-validator')
 
 
 
-router.post('/approveAccount', Validate.approveAccountShema, approveAccount)
-router.post('/createAccount', Validate.createAccountShema, createAccount)
-router.post('/deleteAccount', Validate.deleteAccountShema, deleteAccount)
-router.post('/reinstateAccount', Validate.reinstateAccountShema, reinstateAccount)
-router.post('/updateAccountAddress', Validate.updateAccountAddressShema, updateAccountAddress)
+router.post('/approveAccount', Validate.approveAccountSchema, approveAccount)
+router.post('/createAccount', Validate.createAccountSchema, createAccount)
+router.post('/deleteAccount', Validate.deleteAccountSchema, deleteAccount)
+router.post('/reinstateAccount', Validate.reinstateAccountSchema, reinstateAccount)
+router.post('/updateAccountAddress', Validate.updateAccountAddressSchema, updateAccountAddress)
 
 
 

@@ -7,7 +7,6 @@ const cors = require('cors')
 const fallback = require('express-history-api-fallback')
 const express = require('express')
 const root = __dirname + '/public'
-// const start  = require('./start')
 const app = express();
 
 
@@ -19,7 +18,12 @@ app.use(morganLogger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors())
-app.use(`/users`, require(`./routes/users.router`))
+
+app.get('/' , ()=>{
+    console.log('sssss')
+
+})
+app.use(require(`./routes/accounts.router`))
 
 
 
@@ -28,9 +32,5 @@ app.use(fallback('index.html', { root: root }))
 
 errorHandlersMiddleware(app)
 
-// start()
 module.exports = app;
-
-
-console.log(process.env.AWS_PROFILE)
 
