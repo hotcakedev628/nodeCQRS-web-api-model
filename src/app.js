@@ -1,6 +1,6 @@
 const path = require('path');
 const bodyParser = require('body-parser');
-const errorHandlersMiddleware = require("./core/errorHandlersMiddleware")
+const errorHandlersMiddleware = require("./core/error-handlers-middleware")
 const cors = require('cors')
 const express = require('express')
 const app = express();

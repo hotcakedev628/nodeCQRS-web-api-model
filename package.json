@@ -3,7 +3,6 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "e2e": "node ./src/bin/www -t",
     "coverage": "nodemon --exec istanbul cover node_modules/jasmine/bin/jasmine.js JASMINE_CONFIG_PATH=jasmine.json",
     "test": "nodemon --exec jasmine JASMINE_CONFIG_PATH=jasmine.json",
     "dev": "nodemon ./src/bin/www",
@@ -13,6 +12,7 @@
     "node": "8.9.1"
   },
   "dependencies": {
+    "@types/mongoose": "^4.7.28",
     "aws-sdk": "^2.163.0",
     "body-parser": "~1.17.1",
     "cors": "^2.8.4",
@@ -21,7 +21,8 @@
     "foreman": "2.0.0",
     "istanbul": "^0.4.5",
     "jade": "^1.11.0",
-    "joi": "^13.0.2"
+    "joi": "^13.0.2",
+    "mongoose": "^4.13.6"
   },
   "devDependencies": {
     "jasmine": "^2.7.0",
