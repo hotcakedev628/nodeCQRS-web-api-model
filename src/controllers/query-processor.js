@@ -1,10 +1,12 @@
 
-const query = require('../query/getAccountDetailsById')
+const db = require('../database/db-ctrl')
 
-function getAccountDetailsById(req, res, next) {
-    return query.getAccountDetailsById(req.params.id)
-        .then(account => res.status(200).json(account))
-        .catch(err => res.status(400).json(err))
+async function getAccountDetailsById(req, res, next) {
+    try {
+        const account =  await db.getAccountDetailsById(req.params.id)
+        return res.status(200).json(account)
+    } catch(err) {  return res.status(500).json(err)   }
+    
 }
 
 module.exports = {
