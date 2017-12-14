@@ -1,9 +1,9 @@
 const router = require('express').Router()
-const queryProcessor = require('../controllers/query-processor')
+const {getAccountDetailsById} = require('../controllers/get-account-details')
 
 
 
-router.get('/accountDetailsById/:id',  queryProcessor.getAccountDetailsById)
+router.get('/accountDetailsById/:id',  getAccountDetailsById)
 
 
 
