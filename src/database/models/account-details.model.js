@@ -9,7 +9,7 @@ const schema = new Schema({
     addressLine1: { type: String},
     addressLine2: { type: String },
     city: { type: String},
-    postcode: { type: String},
+    postcode: { type: Number},
     state: { type: String},
     countryName: { type: String},
     isApproved: {type: Boolean},

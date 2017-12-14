@@ -5,6 +5,7 @@ const cors = require('cors')
 const express = require('express')
 const app = express();
 const pollEventsQueue = require('./messaging/events-queue').pollQueueForMessages
+require('./controllers/event-handlers')
 
 app.disable('etag')
 app.set('views', path.join(__dirname, 'views'));

@@ -14,10 +14,9 @@ const receiveMessageParams = {
 
 
 function processMessage(message) {
-    console.log(message)
-    
     return new Promise((resolve) => {
-        eventEmitter.emit(message.Body.eventName, message.Body)
+        const event = JSON.parse(message.Body)
+        eventEmitter.emit(event.name, event)
         resolve();
     });
 }

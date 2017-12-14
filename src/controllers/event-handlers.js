@@ -15,7 +15,11 @@ busEventEmitter.on(events.domainEvents.accountApproved, async body => {
 
 
 busEventEmitter.on(events.domainEvents.accountCreated, async body => {
-    await db.saveNewAccount(body.aggregateId, body.payload.accountNumber, body.businessName)
+    console.log('dsds')
+    
+    const l = await db.saveNewAccount(body.aggregateId, body.payload.accountNumber, body.businessName)
+    console.log(l)
+    
 })
 
 
@@ -25,5 +29,8 @@ busEventEmitter.on(events.domainEvents.accountDeleted, async body => {
 
 
 busEventEmitter.on(events.domainEvents.systemTagAdded, async body => {
+    console.log('sssss')
     await db.addSystemTag(body.aggregateId, body.payload.name, body.payload.appliesToExpenses, body.payload.appliesToTimesheets)
 })
+
+module.exports = {}

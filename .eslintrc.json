@@ -3,7 +3,8 @@
         "browser": true,
         "commonjs": true,
         "es6": true,
-        "node": true
+        "node": true,
+        "jasmine": true
     },
     "parserOptions": {
         "ecmaVersion": 2017,
@@ -19,6 +20,11 @@
         "no-unreachable": "warn",
         "no-unused-vars": "warn",
         "constructor-super": "warn",
-        "valid-typeof": "warn"
+        "valid-typeof": "warn",
+        "no-func-assign": "warn",
+        "no-inner-declarations": "warn",
+        "getter-return": "warn"
+        
+
     }
 }
