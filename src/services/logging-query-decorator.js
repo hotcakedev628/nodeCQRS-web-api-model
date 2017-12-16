@@ -17,5 +17,3 @@ function queryLogger(fn, queryName) {
 
 module.exports = { queryLogger }
 
-
-
