@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const {getAccountDetailsById} = require('../controllers/get-account-details')
+const {getAccountDetailsById} = require('../api/get-account-details')
 
 
 
