@@ -3,7 +3,7 @@ const Schema = mongoose.Schema
 
 
 const schema = new Schema({
-    id: { type: String, required: true, unique: true },
+    accountId: { type: String, required: true, unique: true },
     businessName: { type: String, required: true },
     accountNumber: { type: Number, required: true,},
     addressLine1: { type: String},
@@ -17,5 +17,6 @@ const schema = new Schema({
 });
 
 
+schema.set('autoIndex', false);
 
 module.exports = mongoose.model('AccountDetails', schema);
